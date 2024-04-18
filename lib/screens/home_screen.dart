@@ -13,8 +13,8 @@ class HomeScreen extends ConsumerStatefulWidget {
 
 class _HomeScreenState extends ConsumerState<HomeScreen> {
   late final TextEditingController _messageController;
-  // final apiKey = 'sk-proj-cPwLJgcT20OE19sM2DXWT3BlbkFJyRvLs0XEXKsSkNFJ1p3s';
-  final apiKey = 'AIzaSyCi8Cq4A9GeC6UAGRg11NxYLspmtcXpzAY';
+  final apiKey = 'sk-proj-cPwLJgcT20OE19sM2DXWT3BlbkFJyRvLs0XEXKsSkNFJ1p3s';
+  // final apiKey = 'AIzaSyCi8Cq4A9GeC6UAGRg11NxYLspmtcXpzAY';
   @override
   void initState() {
     _messageController = TextEditingController();
@@ -101,7 +101,6 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     final message = _messageController.text.trim();
     if (message.isEmpty) return;
     await ref.read(chatProvider).sendTextMessage(
-          apiKey: apiKey,
           textPrompt: _messageController.text,
         );
     _messageController.clear();

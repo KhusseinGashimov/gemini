@@ -44,6 +44,7 @@ dependencies:
   google_sign_in: ^6.2.1
   flutter_riverpod: ^2.5.1
   uuid: ^4.3.3
+  http:
 
 dev_dependencies:
   flutter_test:
