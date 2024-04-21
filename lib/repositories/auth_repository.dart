@@ -4,13 +4,11 @@ import 'package:google_sign_in/google_sign_in.dart';
 
 @immutable
 class AuthRepository {
-  final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+  final FirebaseAuth _auth = FirebaseAuth.instance;
   final GoogleSignIn _googleSignIn = GoogleSignIn();
-
   Future<UserCredential?> signInWithGoogle() async {
     // Trigger the Google sign in flow
     final googleUser = await _googleSignIn.signIn();
-
     // Check if user cancelled sign in
     if (googleUser == null) return null;
 
@@ -24,11 +22,10 @@ class AuthRepository {
     );
 
     // Sign in to Firebase with Google credentials
-    return await _firebaseAuth.signInWithCredential(credential);
+    return await _auth.signInWithCredential(credential);
   }
-
   Future<void> singout() async {
     await _googleSignIn.signOut();
-    await _firebaseAuth.signOut();
+    await _auth.signOut();
   }
 }

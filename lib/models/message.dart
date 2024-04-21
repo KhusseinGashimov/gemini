@@ -7,7 +7,7 @@ class Message {
   final String? imageUrl;
   final DateTime createdAt;
   final bool isMine;
-
+  
   const Message({
     required this.id,
     required this.message,

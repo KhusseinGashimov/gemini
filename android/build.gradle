@@ -1,3 +1,14 @@
+buildscript {
+    ext.kotlin_version = '1.9.23' // Обновляем версию плагина Kotlin Gradle
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version" // Используем актуальную версию плагина Kotlin Gradle
+    }
+}
+
 allprojects {
     repositories {
         google()
